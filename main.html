@@ -13,13 +13,13 @@ img {vertical-align: middle;}
 a {vertical-align: middle;}
 
 #slideshow-container {
-			position: relative;
-			height: 400px;
-      width: 950px;
-			overflow: hidden;
-      margin-left: 240px;
-      margin-top:20px;
-		}
+		position: relative;
+		height: 450px;
+		width: 950px;
+		overflow: hidden;
+		margin-left: 240px;
+		margin-top:20px;
+	}
 
 		#slide-frame {
 			position: absolute;
@@ -41,20 +41,20 @@ a {vertical-align: middle;}
 			position: absolute;
 			top: 50%;
 			margin-top: -20px;
-      margin-left: 6px;
-      margin-right: 6px;
+      		margin-left: 6px;
+      		margin-right: 6px;
 			padding:8px;
 			background-color: #ddd;
-      opacity: 0.7;
+     		opacity: 0.7;
 			cursor: pointer;
-      -webkit-clip-path: ellipse(50% 50% at 50% 50%);
-      clip-path: ellipse(50% 50% at 50% 50%);
-      font-size: 20px;
+      		-webkit-clip-path: ellipse(50% 50% at 50% 50%);
+      		clip-path: ellipse(50% 50% at 50% 50%);
+      		font-size: 20px;
       
 		}
 		#prev-button {
 			left: 0;
-      transform: rotate(180);
+      		transform: rotate(180);
 		}
 		#next-button {
 			right: 0;
@@ -67,6 +67,44 @@ a {vertical-align: middle;}
   margin-top: 10px;
 } 
 
+.row {
+	overflow: auto;
+	white-space: nowrap;
+	margin-top:20px;
+	padding: 18px;
+	
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+  position: relative;
+  color: black;
+}
+
+.above {
+	margin-left: 120px;
+	margin-top: 20px;
+	position: absolute;
+	bottom: 95%;
+	transform: translate(-50%,-50%);
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.7;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
 
 .topnav{
       overflow: hidden;
@@ -117,14 +155,45 @@ a {vertical-align: middle;}
   </div>
 </div>
 
+<!-- <br></br>
+<br></br>
+<br></br> -->
+
+<div class="row">
+    <div class="column">
+      <img class="demo cursor" src="img_woods.jpg" style="width:100%" onclick="loadSlide(0)" alt="">
+	  <div class="above">student ctr</names></div>
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_5terre.jpg" style="width:100%" onclick="loadSlide(1)" alt="">
+	  <div class="above">jim</div>
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_mountains.jpg" style="width:100%" onclick="loadSlide(2)" alt="">
+	  <div class="above">fouyer</div>
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_lights.jpg" style="width:100%" onclick="loadSlide(3)" alt="">
+	  <div class="above">dasdsa</div>
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_nature.jpg" style="width:100%" onclick="loadSlide(4)" alt="">
+	  <div class="above">blah</div>
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="img_snow.jpg" style="width:100%" onclick="loadSlide(5)" alt="">
+	  <div class="above">swag</div>
+    </div>
+  </div>
+</div>
 
 <script>
   
-  var slideFrame = document.getElementById('slide-frame');
+	var slideFrame = document.getElementById('slide-frame');
 	var slides = ['slide1.html', 'slide2.html', 'slide3.html'];
-  var names = ['stunden ctr','jim','fouyer'];
+	var names = ['stunden ctr','jim','fouyer'];
 	var currentSlideIndex = 0;
-  document.getElementsByClassName ('name').innerHTML += names[currentSlideIndex];
+	document.getElementsByClassName ('name').innerHTML += names[currentSlideIndex];
 
 
 		function loadSlide(index) {
